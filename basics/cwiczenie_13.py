@@ -11,4 +11,4 @@ while True:
     suma += float(dane)
     i = i + 1
 
- print("Srednia temperatura to: ", suma/i)
+print("Srednia temperatura to: ", suma/i)
