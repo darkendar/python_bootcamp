@@ -33,5 +33,5 @@ while True:
             print("Zbliżasz się")
 
     if graczx > 10 or graczx < 1 or graczy > 10 or graczy < 1:
-        print("Spadłeś z planszy!")
+        print("Spadłeś z planszy!!!")
         break
