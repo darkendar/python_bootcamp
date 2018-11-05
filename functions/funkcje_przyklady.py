@@ -44,4 +44,4 @@ def klon(imie, wiek = 18, wzrost = 181):
     if wiek == 18 and wzrost == 181:
         print("Masz standardowe parametry")
     else:
-        print("Różnisz sie od pozostałych!)
+        print("Różnisz sie od pozostałych!")
