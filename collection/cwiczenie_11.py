@@ -11,4 +11,4 @@ wspolne = parzyste & liczby
 print(wspolne)
 print(f"Wprowadzono {len(liczby)} liczb, z których {len(wspolne)} jest parzystych")
 
-#napisz program ktory posortuje liczby w tablicy przy wykorzystaniu algorytmu "sortowanie przez wybranie
+#napisz program ktory posortuje liczby w tablicy przy wykorzystaniu algorytmu "sortowanie przez wybranie"
