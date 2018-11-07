@@ -5,7 +5,9 @@ while True:
     liczba = input("Podaj liczbe: ")
     if liczba == "k":
         break
-    liczby.add(liczba)
+    else:
+        liczba = int(liczba)
+        liczby.add(liczba)
 
 wspolne = parzyste & liczby
 print(wspolne)
