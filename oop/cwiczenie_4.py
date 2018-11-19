@@ -6,11 +6,10 @@ class Basket():
         pass
 
     def add_product(self, product, qty):
-        self.productt = product
-        self.qty = qty
+
 
     def count_total_price(self):
-
+        pass
 
     def generate_report(self):
         pass
