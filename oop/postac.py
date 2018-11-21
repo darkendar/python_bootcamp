@@ -6,13 +6,17 @@ class Postac:
 
     def __init__(self, imie, atak, zdrowie):
         self.imie = imie
-        self.atak = atak
+        self._atak = atak
         self.zdrowie = zdrowie
         self.zdrowie_max = zdrowie
         self.ekwipunek = []
 
-    def przedstaw_sie(self):
-        print(self)
+    @property
+    def atak(self):
+        wynik = self._atak
+        for p in self.ekwipunek:
+            wynik += p.bonus_atk
+        return wynik
 
     def __str__(self):
         if self.czy_zyje():
@@ -44,7 +48,10 @@ class Postac:
         self.ekwipunek.append(przedmiot)
 
     def atak_plus(self):
-        self.atak += ekwipunek[1]
+        wynik = self.atak
+        for p in self.ekwipunek:
+            wynik += p.bonus_atk
+        return wynik
 
     def moc_ataku(self):
         return self.atak//2 + randint(0, self.atak//2)
@@ -67,11 +74,13 @@ janusz = Postac("Janusz", 40, 300)
 
 tulipan = Przedmiot("Zielony tulipan znieszczenia", 5)
 rufus.daj_przedmiot(tulipan)
+rufus.atak_plus()
 
 Postac.walka(rufus, janusz)
 print(rufus)
 print(janusz)
 
+# print(f"bonus atk: {rufus.atak_plus()}")
 
 # rufus.przedstaw_sie()
 # print(rufus)
@@ -97,7 +106,6 @@ def test_leczenie_nieboszczyka():
     assert postac.zdrowie == 0
     postac.wylecz(50)
     assert postac.zdrowie == 0
-
 
 def test_za_duze_leczenie():
     postac = Postac("Rafał", 5, 200)
