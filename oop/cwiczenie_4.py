@@ -2,15 +2,17 @@ from cwiczenie_1 import Product
 
 class Basket():
 
-    def __init__(self):
-        pass
+    def __init__(self, ID, produkt, cena):
+        self.ID = ID
+        self.produkt = produkt
+        self.cena = cena
 
     def add_product(self, product, qty):
-        self.productt = product
+        self.product = product
         self.qty = qty
 
     def count_total_price(self):
-
+        pass
 
     def generate_report(self):
         pass
