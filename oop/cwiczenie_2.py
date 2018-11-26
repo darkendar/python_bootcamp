@@ -1,8 +1,13 @@
-class Employee():
-
-    def __init__(self, imie, nazwisko, stawka):
+class Osoba:
+    def __init__(self, imie, nazwisko):
         self.imie = imie
         self.nazwisko = nazwisko
+
+
+class Employee(Osoba):
+
+    def __init__(self, imie, nazwisko, stawka):
+        super().__init__(imie, nazwisko)
         self.stawka = stawka
         self.czas_pracy = 0
 
@@ -23,9 +28,24 @@ class Employee():
         return wyplata
 
 
-kopacz = Employee("Maciej", "Kowalski", 100)
+class PremiumEmployee(Employee):
+
+    def __init__(self, imie, nazwisko, stawka):
+        super().__init__(imie, nazwisko, stawka)
+        self.bonus = 0
+
+    def give_bonus(self, kwota):
+        self.bonus += kwota
+
+    def pay_salary(self):
+        to_pay = super().pay_salary()
+        self.bonus = 0
+        return to_pay + self.bonus
+
+
+kopacz = PremiumEmployee("Maciej", "Kowalski", 100)
 print(kopacz.pay_salary())
-kopacz.register_time(5)
 kopacz.register_time(10)
+kopacz.give_bonus(1000)
 print(kopacz.pay_salary())
 print(kopacz.pay_salary())
