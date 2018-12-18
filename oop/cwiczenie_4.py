@@ -8,8 +8,7 @@ class Basket():
         self.cena = cena
 
     def add_product(self, product, qty):
-        self.product = product
-        self.qty = qty
+        pass
 
     def count_total_price(self):
         pass
