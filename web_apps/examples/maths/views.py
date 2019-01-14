@@ -13,7 +13,7 @@ def obliczenia(request, dzialanie, a, b):
     elif dzialanie == "div":
         a, b = float(a), float(b)
         if b == 0:
-            wynik = "Dzie dziele przez zero!"
+            wynik = "Nir dziel przez zero!"
         else:
             wynik = a/b
 
